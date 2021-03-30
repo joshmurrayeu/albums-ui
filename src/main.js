@@ -9,11 +9,6 @@ Vue.config.productionTip = false
 
 Vue.use(VueFormulate)
 
-new Vue({
-    router,
-    render: h => h(App)
-}).$mount('#app')
-
 const axios = require('axios').create({
     headers: {
         'X-Requested-With': 'XMLHttpRequest',
@@ -23,3 +18,8 @@ const axios = require('axios').create({
 });
 
 Vue.prototype.axios = axios
+
+new Vue({
+    router,
+    render: h => h(App)
+}).$mount('#app')
