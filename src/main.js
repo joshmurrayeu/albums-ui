@@ -1,15 +1,25 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import VueFormulate from '@braid/vue-formulate'
 
 import './stylesheets/app.scss'
 
 Vue.config.productionTip = false
+
+Vue.use(VueFormulate)
 
 new Vue({
     router,
     render: h => h(App)
 }).$mount('#app')
 
-window.axios = require('axios');
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+const axios = require('axios').create({
+    headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+        'Accept': 'application/vnd.api+json',
+        'Content-Type': 'application/vnd.api+json',
+    },
+});
+
+Vue.prototype.axios = axios

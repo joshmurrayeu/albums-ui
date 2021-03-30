@@ -1,0 +1,21 @@
+.formulate-form {
+  .formulate-input {
+    @apply mb-3;
+
+    label[for] {
+      @apply mb-1;
+    }
+
+    input[type='text'], input[type='email'] {
+      @apply border rounded w-full p-1;
+    }
+
+    .formulate-input-error {
+      @apply text-red-500 text-sm;
+    }
+  }
+
+  button[type='submit'] {
+    @apply btn text-2xl bg-yellow-200;
+  }
+}

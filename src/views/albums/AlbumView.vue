@@ -23,7 +23,6 @@
 
 <script>
 import Card from './../../components/misc/Card';
-import axios from "axios";
 import Container from "../../components/misc/Container";
 
 export default {
@@ -52,7 +51,7 @@ export default {
     let albumId = vm.$route.params.id;
 
     // Get the albums from the API
-    axios.get(`http://albums-api.test/api/v1/albums/${albumId}?include=user`).then((response) => {
+    vm.axios.get(`http://albums-api.test/api/v1/albums/${albumId}?include=user`).then((response) => {
       vm.album = response.data.data;
       vm.user = response.data.included[0];
     });

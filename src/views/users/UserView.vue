@@ -12,7 +12,10 @@
 
       <hr class="my-2">
 
-      <p><a class="text-blue-300" :href="userUri(this.user.id, 'edit')">Click here</a> to edit this user.</p>
+      <p>
+        <router-link :to="{ name: 'edit-user', params: { id: user.id } }" class="text-blue-300">Click here</router-link>
+        to edit this user.
+      </p>
     </card>
 
     <h2 class="text-2xl">Albums belonging to this user</h2>
@@ -24,7 +27,6 @@
 <script>
 import AlbumTable from "./../../components/albums/AlbumTable";
 import Card from "./../../components/misc/Card";
-import axios from "axios";
 import Container from "../../components/misc/Container";
 
 export default {
@@ -45,7 +47,7 @@ export default {
     let userId = vm.$route.params.id;
 
     // Get the albums from the API
-    axios.get(`http://albums-api.test/api/v1/users/${userId}?include=albums`).then((response) => {
+    vm.axios.get(`http://albums-api.test/api/v1/users/${userId}?include=albums`).then((response) => {
       vm.user = response.data.data;
       vm.albums = response.data.included;
     });

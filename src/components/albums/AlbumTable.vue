@@ -21,7 +21,6 @@
 
 <script>
 import Card from './../misc/Card'
-import axios from "axios";
 
 export default {
   components: {
@@ -42,7 +41,7 @@ export default {
       albumUri += '?filter[user]=' + this.id;
     }
 
-    axios.get(albumUri).then((response) => {
+    vm.axios.get(albumUri).then((response) => {
       vm.albumsStored = response.data.data;
     });
   },
