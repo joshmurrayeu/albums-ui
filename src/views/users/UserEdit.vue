@@ -92,7 +92,7 @@ export default {
   },
   methods: {
     uri(id) {
-      return `http://albums-api.test/api/v1/users/${id}`;
+      return `http://api.albums.test/api/v1/users/${id}`;
     },
     async handleFormSubmit(data) {
       // Get the user

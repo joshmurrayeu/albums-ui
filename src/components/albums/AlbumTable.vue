@@ -34,7 +34,7 @@ export default {
   },
   mounted() {
     let vm = this;
-    let albumUri = 'http://albums-api.test/api/v1/albums';
+    let albumUri = 'http://api.albums.test/api/v1/albums';
 
     // Get the albums from the API if none have been passed in
     if (typeof this.id != 'undefined') {
@@ -44,11 +44,6 @@ export default {
     vm.axios.get(albumUri).then((response) => {
       vm.albumsStored = response.data.data;
     });
-  },
-  methods: {
-    albumUri(id) {
-      return 'http://albums-api.test/albums/' + id;
-    }
   },
 }
 </script>

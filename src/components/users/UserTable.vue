@@ -36,7 +36,7 @@ export default {
     let vm = this;
     
     // Get the albums from the API
-    vm.axios.get('http://albums-api.test/api/v1/users').then((response) => {
+    vm.axios.get('http://api.albums.test/api/v1/users').then((response) => {
       vm.users = response.data.data;
     });
   },

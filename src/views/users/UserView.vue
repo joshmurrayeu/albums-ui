@@ -31,8 +31,7 @@ import Container from "../../components/misc/Container";
 
 export default {
   components: {
-    Container,
-    AlbumTable, Card
+    Container, AlbumTable, Card
   },
   data() {
     return {
@@ -47,15 +46,10 @@ export default {
     let userId = vm.$route.params.id;
 
     // Get the albums from the API
-    vm.axios.get(`http://albums-api.test/api/v1/users/${userId}?include=albums`).then((response) => {
+    vm.axios.get(`http://api.albums.test/api/v1/users/${userId}?include=albums`).then((response) => {
       vm.user = response.data.data;
       vm.albums = response.data.included;
     });
-  },
-  methods: {
-    userUri(id, action = '') {
-      return 'http://albums-api.test/users/' + id + '/' + action;
-    }
   },
 }
 </script>
