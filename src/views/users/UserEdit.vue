@@ -7,7 +7,7 @@
         <FormulateForm @submit="handleFormSubmit">
           <FormulateInput v-model="user.attributes.name" name="name" label="Name" error-behavior="live" validation="required"/>
           <FormulateInput v-model="user.attributes.username" name="username" label="Username" error-behavior="live" validation="bail|required|matches:/[A-za-z0-9.]/"/>
-          <FormulateInput v-model="user.attributes.email" type="email" name="email" label="Email" error-behavior="live" validation="bail!required|email"/>
+          <FormulateInput v-model="user.attributes.email" type="email" name="email" label="Email" error-behavior="live" validation="bail|required|email"/>
 
           <FormulateInput type="group" name="address">
             <FormulateInput type="group" name="geo">
