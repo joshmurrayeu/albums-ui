@@ -1,0 +1,7 @@
+.btn {
+  @apply text-gray-800 font-bold py-1 px-3 rounded text-xs;
+}
+
+.btn + .btn {
+  @apply ml-2;
+}

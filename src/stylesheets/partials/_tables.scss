@@ -1,0 +1,22 @@
+.table-fixed {
+  thead, tbody {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    @apply shadow-sm;
+  }
+
+  tbody {
+    @apply h-72 overflow-y-scroll;
+
+    tr {
+      @apply hover:bg-gray-50;
+    }
+  }
+
+  th, td {
+    @apply w-full py-3 px-5 border-b border-gray-50;
+  }
+}
