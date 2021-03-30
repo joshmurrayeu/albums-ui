@@ -7,7 +7,7 @@
         <th class="text-right ml-auto">Actions</th>
       </tr>
       </thead>
-      <tbody>
+      <tbody v-if="Object.keys(this.albumsStored).length > 0">
       <tr v-for="album in this.albumsStored" :key="album.id">
         <td class="">{{ album.attributes.title }}</td>
         <td class="w-20 text-right">
@@ -39,7 +39,7 @@ export default {
 
     // Get the albums from the API if none have been passed in
     if (typeof this.id != 'undefined') {
-      albumUri += '/' + this.id;
+      albumUri += '?filter[user]=' + this.id;
     }
 
     axios.get(albumUri).then((response) => {

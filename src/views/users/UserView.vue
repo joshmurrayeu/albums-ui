@@ -17,7 +17,7 @@
 
     <h2 class="text-2xl">Albums belonging to this user</h2>
 
-    <album-table :id="this.user.attributes.id"/>
+    <album-table :id="this.user.id"/>
   </container>
 </template>
 
